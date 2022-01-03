@@ -65,7 +65,7 @@ function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (x = y){
+  if (x === y){
     return true;
   }
   return false;
@@ -75,7 +75,7 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (str1 = str2) {
+  if (str1 === str2) {
     return true;
   }
   return false;
@@ -113,7 +113,7 @@ function esPar(num) {
   // De lo contrario, devuelve "false"
   // Tu código:
   var par = num % 2;
-  if (par = 0){
+  if (par === 0){
     return true;
   }
   return false;
@@ -124,7 +124,7 @@ function esImpar(num) {
   // De lo contrario, devuelve "false"
   // Tu código:
   var impar = num % 2;
-  if (impar = 1){
+  if (impar === 1){
     return true
   }
   return false;
@@ -192,7 +192,7 @@ function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
-  var signo = "!"
+  var signo = "!";
   var palabra = str + signo;
   return palabra;
 }
