@@ -38,7 +38,7 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  return objetoMisterioso[numeroMisterioso] * 5;
+  return objetoMisterioso.numeroMisterioso * 5;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -92,7 +92,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  if (usuario[password] === password){
+  if (usuario.password === password){
     return true;
   }
   return false;
@@ -102,7 +102,7 @@ function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
-  usuario[nuevaPassword] = "nuevagpassword";
+  usuario.password = nuevaPassword;
   return usuario;
 }
 
@@ -111,7 +111,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:
-  usuario [amigos.push (nuevoAmigo)];
+  usuario.amigos.push (nuevoAmigo);
   return usuario;
 }
 
@@ -151,9 +151,10 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto[calcularPrecioDescuento] = function(){
-  var descuento = producto[precio] * producto[porcentajeDeDescuento];
-  var total = producto[precio] - descuento;
+
+  producto.calcularPrecioDescuento = function(){
+  var descuento = producto.precio * producto.porcentajeDeDescuento;
+  var total = producto.precio - descuento;
   return total
 }
 return producto
