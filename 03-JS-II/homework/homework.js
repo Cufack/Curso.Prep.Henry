@@ -34,7 +34,7 @@ function conection(status) {
   else if (status === 2){
   return "Away";
   }
-  return "offline";
+  return "Offline";
 }
 
 function saludo(idioma) {
