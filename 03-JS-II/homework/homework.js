@@ -29,10 +29,10 @@ function conection(status) {
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
   if (status === 1){
-    return "online";
+    return "Online";
   }
   else if (status === 2){
-  return "away";
+  return "Away";
   }
   return "offline";
 }
@@ -53,7 +53,7 @@ function saludo(idioma) {
     else if (idioma === "ingles"){
      return "Hello!"
     }
-    return "Hola"
+    return "Hola!"
 }
 
 function colors(color) {
@@ -65,16 +65,16 @@ function colors(color) {
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
   if (color === "blue"){
-    return "This is blue!";
+    return "This is blue";
   }
    else if (color === "red"){
-     return "This is red!!";
+     return "This is red";
     }
     else if (color === "green"){
-     return "This is green!";
+     return "This is green";
     }
     else if (color === "orange"){
-      return "This is orange!";
+      return "This is orange";
     }  
     return "Color not found";
 }
@@ -147,7 +147,7 @@ function operadoresLogicos(num1, num2, num3) {
       return (num3 + 1);
     }
      else if (num1 > num2 && num1 > num3 && num1 > 0){
-      return "Numero 1 es mayor y positivo";
+      return "Número 1 es mayor y positivo";
     }
       return false;
 }
@@ -173,9 +173,9 @@ function esVerdadero(valor){
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
   if (valor === true){
-    return "Soy Verdadero";
+    return "Soy verdadero";
   }
-    return "Soy Falso";
+    return "Soy falso";
 }
 
 function tablaDelSeis(){
@@ -183,7 +183,7 @@ function tablaDelSeis(){
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
   var num = [];
-  for (var i = 0; i > 11; i++) {
+  for (var i = 0; i < 11; i++) {
     num [i] = i * 6;
   }
     return num;
