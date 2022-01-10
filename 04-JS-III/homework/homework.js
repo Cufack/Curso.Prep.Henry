@@ -10,7 +10,8 @@ function devolverPrimerElemento(array) {
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  return array [array.length];
+  var lastitem = array[array.length -1]
+  return lastitem;
 }
 
 
@@ -27,7 +28,7 @@ function incrementarPorUno(array) {
   // y devuelve el array
   // Tu código:
   for (var i = 0; i < array.length; i++){
-    array [i] = [i + 1];
+    array [i] = array[i]+1;
   }
    return array;
 }
@@ -58,7 +59,10 @@ function dePalabrasAFrase(palabras) {
   // Tu código:
   var str = "";
   for (var i = 0; i < palabras.length; i++){
-    str = str + i[0] + " ";
+    str = str + palabras[i];
+    if (i !== palabras.length - 1){
+      str = str + " ";
+    }
   }
   return str;
 } 
@@ -67,12 +71,10 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for (var i = 0; i < array.length; i++){
-    if (array [i] === elemento){
-      return true;
-    }
-    return false;
+  if (array.includes(elemento) === true){
+    return true;
   }
+  return false;
 }
 
 
@@ -106,7 +108,7 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var max;
+  var max = -9999;
   for (var i = 0; i < numeros.length; i++){
     if (max < numeros [i]){
       max = numeros[i];
@@ -138,7 +140,7 @@ function cuentoElementos(arreglo){
   //Escribe tu código aquí
 var mayor18 = 0;
 for (var i = 0; i < arreglo.length; i++){
-  if (arreglo[i] < 18){
+  if (arreglo[i] > 18){
     mayor18 = mayor18 +1;
   }
  }
@@ -162,10 +164,13 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if (n[0] == 9){
-    return true;
-  }
-  return false;
+
+if(n.toString().startsWith("9")){
+  return true
+}
+else{
+  return false
+}
 }
 
 
@@ -173,17 +178,17 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí 
-  var i = 0;  
-  if (arreglo [i] === arreglo[i] + 1){
-      for (var i = 2; i < arreglo.length; i++){ 
-        if (arreglo [i] !== arreglo[i] - 1){
-          return false;
+var i = 0;  
+if (arreglo[i] === arreglo[i+1]){
+    for (var i = 2; i < arreglo.length; i++){ 
+      if (arreglo [i] !== arreglo[i-1]){
+        return false;
     }
-    return true;
+  return true;
   }
-  return false;
 } 
-
+return false;
+}
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
@@ -191,14 +196,24 @@ function mesesDelAño(array) {
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
   var lista = [];
+  var EneOk = false;
+  var MarOk = false;
+  var NovOk = false;
   var j = 0;
   for (var i = 0; i < array.length; i++){
     if ( array [i] === "Enero" || array [i] === "Marzo" || array [i] === "Noviembre" ){
-      array [i] = lista [j];
-      j = j + 1; 
+      lista[j] = array [i];
+      if (lista[j] === "Enero"){
+        EneOk = true;
+      }else if (lista [j] ===  "Marzo"){
+          MarOk = true;
+    }else if (lista [j] === "Noviembre"){
+            NovOk = true;
+    }
+    j++ ; 
     }
   }
-  if (lista.length !== 2){
+  if (EneOk === false || MarOk === false || NovOk === false){
    return "No se encontraron los meses pedidos";
   }
   return lista;
@@ -213,7 +228,7 @@ function mayorACien(array) {
   var j = 0;
   for (var i = 0; i < array.length; i++){
     if (array [i] > 100){
-      array [i] = mayoresA100 [j];
+      mayoresA100[j] = array[i];
       j = j + 1;
     }
   }
@@ -240,7 +255,7 @@ function breakStatement(numero) {
     }
   }
   if (t === false){
-    return "Se interrumpio la ejecucion";
+    return "Se interrumpió la ejecución";
   }
   return aumento;
 }
@@ -287,5 +302,5 @@ module.exports = {
   mesesDelAño,
   mayorACien,
   breakStatement,
-  continueStatement
+  continueStatement,
 };
